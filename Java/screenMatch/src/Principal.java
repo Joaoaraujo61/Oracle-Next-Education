@@ -1,4 +1,5 @@
 import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -16,5 +17,12 @@ public class Principal {
 
         System.out.println("Total de Avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
+
+        Serie lost = new Serie();
+        lost.setNome("Lost");
+        lost.setAnoDeLancamento(2000);
+        lost.exibeFichaTecnica();
+        lost.setTemporadas(10);
+        lost.setEpisodiosPortemporaada(10);
     }
 }
