@@ -37,4 +37,9 @@ public class Serie extends Titulo{
     public void setMinPorEpisodio(int minPorEpisodio){
         this.minPorEpisodio = minPorEpisodio;
     }
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPortemporaada * minPorEpisodio;
+    }
 }
