@@ -1,5 +1,5 @@
-import modelos.Carro;
-import modelos.Gato;
+import br.com.alura.spotifyApp.modelos.Carro;
+import br.com.alura.spotifyApp.modelos.Gato;
 
 public class App {
     public static void main(String[] args) throws Exception {

@@ -1,4 +1,4 @@
-package modelos;
+package br.com.alura.spotifyApp.modelos;
 
 public class Cachorro extends Animal{
     @Override

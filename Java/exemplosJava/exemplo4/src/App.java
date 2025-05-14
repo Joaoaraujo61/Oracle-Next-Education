@@ -1,5 +1,5 @@
-import modelos.CalculadoraSalaRetangular;
-import modelos.ConversorMoeda;
+import br.com.alura.spotifyApp.modelos.CalculadoraSalaRetangular;
+import br.com.alura.spotifyApp.modelos.ConversorMoeda;
 public class App {
     public static void main(String[] args) throws Exception {
         ConversorMoeda conversor = new ConversorMoeda();

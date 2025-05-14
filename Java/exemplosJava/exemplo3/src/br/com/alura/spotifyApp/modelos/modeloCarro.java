@@ -1,4 +1,4 @@
-package modelos;
+package br.com.alura.spotifyApp.modelos;
 public class modeloCarro extends Carro{
     private String cor;
 
