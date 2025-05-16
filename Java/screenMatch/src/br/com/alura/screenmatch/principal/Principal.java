@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.principal;
+
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculo.FiltroDeRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -60,6 +62,6 @@ public class Principal {
         System.out.println(listaDefIlmes);
         System.out.println("toString: " + listaDefIlmes.get(0).toString());
 
-        filmeJoao.toString();
+        filmeJoao.toString(); 
     }
 }
