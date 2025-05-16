@@ -10,9 +10,7 @@ import java.util.ArrayList;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O Poderoso Chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão",1970);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -24,18 +22,14 @@ public class Principal {
         System.out.println("Total de Avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost",2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPortemporaada(10);
         lost.setMinPorEpisodio(50);
         System.out.println("Duração maratona de lost: " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar",2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -53,10 +47,8 @@ public class Principal {
         episodio.setTotalVizualizacoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeJoao = new Filme();
-        filmeJoao.setNome("Dogville");
+        Filme filmeJoao = new Filme("Dogville", 2003);
         filmeJoao.setDuracaoEmMinutos(200);
-        filmeJoao.setAnoDeLancamento(2003);
         filmeJoao.avalia(10);
 
         ArrayList<Filme> listaDefIlmes = new ArrayList<>();
@@ -66,5 +58,8 @@ public class Principal {
         System.out.println("Tamanho Lista: " + listaDefIlmes.size());
         System.out.println("Primero: " + listaDefIlmes.get(0).getNome());
         System.out.println(listaDefIlmes);
+        System.out.println("toString: " + listaDefIlmes.get(0).toString());
+
+        filmeJoao.toString();
     }
 }
