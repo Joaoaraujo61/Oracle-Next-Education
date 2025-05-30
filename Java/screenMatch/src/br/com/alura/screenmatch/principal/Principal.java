@@ -7,6 +7,8 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -62,6 +64,6 @@ public class Principal {
         System.out.println(listaDefIlmes);
         System.out.println("toString: " + listaDefIlmes.get(0).toString());
 
-        filmeJoao.toString(); 
+        filmeJoao.toString();
     }
 }
