@@ -7,35 +7,32 @@ public class App {
       Scanner leitura = new Scanner(System.in);
       List<Produto> infoProdutos = new ArrayList<>();
 
-      int limite;
-      int resposta = 1;
-      
-
       System.out.println("Digite o limite do Cartão: ");
-      limite = leitura.nextInt();
+      Cartao cartao = new Cartao(leitura.nextInt());;
       leitura.nextLine();
-      int restanteLimite = limite;
-
+      
+      int resposta = 1;
       while (resposta == 1) {
-         Produto item = new Produto();
          System.out.println("Digite a descrição da compra: ");
-         item.setDescricao(leitura.nextLine());
+         String descricao = leitura.nextLine();
 
          System.out.println("Digite o valor da compra: ");
          int valor = leitura.nextInt();
 
+         Produto item = new Produto(descricao, valor);
+
          boolean res = false;
          while (!res) {
-            if (restanteLimite == 0) {
+            if (cartao.getSaldo() == 0) {
                System.out.println("Limite atingido!");
                res = true;
-            }else if (valor > restanteLimite) {
-               System.out.println("Seu limite é: " + restanteLimite);
+            }else if (valor > cartao.getSaldo()) {
+               System.out.println("Seu limite é: " + cartao.getSaldo());
                System.out.println("Digite o valor da compra: ");
                valor = leitura.nextInt();
             }else{
                item.setValor(valor);
-               restanteLimite -=valor;
+               cartao.setSaldo(cartao.getSaldo()-valor);
                res = true;
             }
          }   
@@ -44,7 +41,7 @@ public class App {
          infoProdutos.add(item);
          System.out.println("Compra finalidzada!"); 
 
-         if (restanteLimite > 0) {
+         if (cartao.getSaldo() > 0) {
             System.out.println("Digite 0 para sair ou 1 para continuar");
             resposta = leitura.nextInt();
             leitura.nextLine();
@@ -62,7 +59,7 @@ public class App {
          System.out.println(i.getDescricao() + " - R$ " + i.getValor() + ",00");
       }
 
-      System.out.println("\nLimite restante: R$ " + restanteLimite + ",00");
+      System.out.println("\nLimite restante: R$ " + cartao.getSaldo() + ",00");
       System.out.println("**************************");
       leitura.close();
    }

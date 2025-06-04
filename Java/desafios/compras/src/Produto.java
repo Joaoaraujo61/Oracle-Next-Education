@@ -3,6 +3,11 @@ public class Produto {
     private String descricao;
     private int valor;
 
+    public Produto(String descricao, int valor){
+        this.descricao = descricao;
+        this.valor = valor;
+    }
+
     public void setDescricao(String descricao){
         this.descricao = descricao;
     }
