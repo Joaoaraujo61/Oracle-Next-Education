@@ -12,7 +12,9 @@ public class googleBooks {
         var livro = leitura.nextLine();
         leitura.close();
 
-        String endereco = "https://www.googleapis.com/books/v1/volumes?q=" + livro + "&apikey=AIzaSyCQyzaKy81fPSNphTwKBkAyKBGE39mD-vE";
+        String apiKey = System.getenv("API_KEY_GBOOKS");
+        
+        String endereco = "https://www.googleapis.com/books/v1/volumes?q=" + livro + "&apikey="+ apiKey;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
