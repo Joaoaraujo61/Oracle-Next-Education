@@ -11,7 +11,7 @@ public class App {
                         "cidade" = "GAMA",
                         "altura" = 1.9
                     }
-                """;
+                """; 
        Gson gson = new Gson();
        Pessoa pessoa = gson.fromJson(json, Pessoa.class);
        System.out.println(pessoa);
