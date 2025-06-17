@@ -16,24 +16,19 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
         System.out.println("Digite seu cep para consulta: ");
-        int cep = leitura.nextInt();
+        String cep = leitura.nextLine();
         leitura.close();
+        ConsultaCep consultaCep = new ConsultaCep();
+        Endereco novoEndereco = consultaCep.buscaEndereco(cep);
 
-
-        String endereco = "https://viacep.com.br/ws/" + cep + "/json/";
         try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(endereco))
-                    .build();
-            HttpResponse<String> response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
-
-            FileWriter escrita = new FileWriter("DadosCep.json");
-            escrita.write(response.body());
-            escrita.close();
+            GeradorDeArquivo gerador = new GeradorDeArquivo();
+            gerador.salvaJson(novoEndereco);
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
+
+
+
     }
 }
